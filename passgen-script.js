@@ -30,12 +30,12 @@ let specChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_',
 // let numCheck = prompt('How many characters do you want in your password?', 'Enter 8 - 128');
 
 function generatePassword(){
-  let numCheck = prompt('How many characters do you want in your password?', 'Enter 8 - 128');
-  numCheck;
-  if(numCheck >= 8 && numCheck < 129 && numCheck){
+  let lengthCheck = prompt('How many characters do you want in your password?', 'Enter 8 - 128');
+  lengthCheck;
+  if(lengthCheck >= 8 && lengthCheck < 129 && lengthCheck){
     let allCap = confirm('Do you want to have capitalized letters in your password?', 'Press OK');
     allCap;
-  } else if(numCheck === null){
+  } else if(lengthCheck === null){
     alert('Cannot be left blank!');
     return generatePassword();
   } else {
@@ -48,11 +48,28 @@ function generatePassword(){
     allLow;
   } else if(allCap === null){
     alert('Cannot be left blank!');
-    return allLow;
+    return allCap;
   } else {
     alert('It"s highly suggested to have a CAPTILIZED letter to better secure the password.');
     return generatePassword();
   };
+
+  if(allLow){
+    let specCheck = confirm('Do you want to have special characters in your password?', 'Press OK');
+    specCheck;
+  } else if(allLow === null){
+    alert('Cannot be left blank!');
+    return allLow;
+  } else {
+    alert('It"s highly suggested to have a lowercase letter to better secure the password.');
+    return generatePassword();
+  };
+
+  if(specCheck){
+    let numCheck = prompt('DO you want to have numbers in your password?', 'Press OK');
+    numCheck;
+    
+  }
 }
 
 
