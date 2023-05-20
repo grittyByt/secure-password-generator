@@ -32,22 +32,23 @@ let specChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_',
 function generateChoices(){
    // adding parseInt method around the prompt will prevent weirdness from happening if user enters a number with decimal (non integer)
    let lengthCheck = parseInt(prompt('How many characters do you want in your password?', 'Enter 8 - 128'));
-   lengthCheck;
+  //  lengthCheck;
    if(lengthCheck >= 8 && lengthCheck < 129){
-     let allCap = confirm('Do you want to have capitalized letters in your password?', 'Press OK');
+     let allCap = confirm('Do you want to have capitalized letters in your password?');
      allCap;
-   } else if(lengthCheck === null){
+   } else if(lengthCheck == null){
      alert('Cannot be left blank!');
      return generatePassword();
    } else {
      alert('A number between 8 and 128 must be selected to continue.')
-     return generatePassword();
+     console.log('is this working?');
    };
    
    // after selecting OK the user will be prompted several more times with these if statements.
    if(allCap === true){
      let allLow = confirm('Do you want to have lowercase letters in your password?', 'Press OK');
      allLow;
+     console.log('what next?');
    } else if(allCap === null){
      alert('Cannot be left blank!');
      return allCap;
