@@ -23,38 +23,38 @@
 // THEN the password is either displayed in an alert or written to the page
 
 
-let upCap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-let lowLett = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let numChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-let specChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '?', '<', '>', '/', ',', '.'];
+let upCap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z '];
+let lowLett = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z '];
+let numChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9 '];
+let specChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '?', '<', '>', '/', '.'];
 // let numCheck = prompt('How many characters do you want in your password?', 'Enter 8 - 128');
 const vegeta = [];
 // gets the length of each array as a string
 let upperCap = upCap;
 
-let lowChar = lowLett;
+let downLow = lowLett;
 
 let numBar = numChar;
 
-let specNum = specChar;
+let specThis = specChar;
 
 
-console.log(upperCap.length);
+// console.log(upperCap.length);
 
-let whatUp = upCap.toString();
-console.log(whatUp.length);
+// let whatUp = upCap.toString();
+// console.log(whatUp.length);
 
-let downLow = lowLett.toString();
-console.log(downLow);
+// let downLow = lowLett.toString();
+// console.log(downLow);
 
-let digits = numChar.toString();
-console.log(digits.length);
-let soSpec = specChar.toString();
-console.log(soSpec.length);
+// let digits = numChar.toString();
+// console.log(digits.length);
+// let soSpec = specChar.toString();
+// console.log(soSpec.length);
 
 
-// combines the arrays that are strings
-let comboMax = whatUp + downLow + digits + soSpec;
+
+
 
 
 // prompt functions
@@ -69,8 +69,8 @@ function checkLength() {
     alert('A number between 8 and 128 must be selected to continue.');
     return checkLength();
   } else {
-    alert('Cannot be left blank')
-    return checkLength();
+    alert('Cannot be left blank');
+    return;
   };
 }
 
@@ -117,24 +117,100 @@ function checkSpec() {
 // console.log(vegeta[0]);
 
 const luffy = () => {
+  // stringify the arrays and the entered length of the password
 
+  let whatUp = upperCap.toString();
+  let lowChar = downLow.toString();
+  let digits = numBar.toString();
+  let soSpec = specThis.toString();
+
+
+  // combines the arrays that are strings
+  let comboMax = whatUp + lowChar + digits + soSpec;
+  console.log(comboMax);
+  
+  let maxCombo = comboMax.toString();  
+ 
   let saiyan = vegeta.toString();
-  console.log(saiyan);
+  // console.log(saiyan);
   let fortKnox = '';
   if (checkUp && checkLow && checkNums && checkSpec) {
     
 
-    fortKnox += whatUp[Math.floor(Math.random() * upperCap)];
-    fortKnox += downLow[Math.floor(Math.random() * lowChar)];
-    fortKnox += digits[Math.floor(Math.random() * numChar)];
-    fortKnox += soSpec[Math.floor(Math.random() * specNum)];
+    fortKnox += whatUp[Math.floor(Math.random() * upperCap.length)];
+    fortKnox += lowChar[Math.floor(Math.random() * downLow.length)];
+    fortKnox += digits[Math.floor(Math.random() * numBar.length)];
+    fortKnox += soSpec[Math.floor(Math.random() * specThis.length)];
 
     while (saiyan > fortKnox.length) {
-      fortKnox += comboMax[Math.floor(Math.random() * comboMax.length)];
+      fortKnox += maxCombo[Math.floor(Math.random() * comboMax.length)];
     }
-    console.log(fortKnox);
+    return fortKnox;
   }
-  return;
+
+  if (!checkUp && checkLow && checkNums && checkSpec) {
+    
+
+    // fortKnox += whatUp[Math.floor(Math.random() * upperCap.length)];
+    fortKnox += lowChar[Math.floor(Math.random() * downLow.length)];
+    fortKnox += digits[Math.floor(Math.random() * numBar.length)];
+    fortKnox += soSpec[Math.floor(Math.random() * specThis.length)];
+
+    while (saiyan > fortKnox.length) {
+      fortKnox += maxCombo[Math.floor(Math.random() * comboMax.length)];
+    }
+    return fortKnox;
+  }
+
+  if (checkUp && !checkLow && checkNums && checkSpec) {
+    
+
+    fortKnox += whatUp[Math.floor(Math.random() * upperCap.length)];
+    // fortKnox += lowChar[Math.floor(Math.random() * downLow.length)];
+    fortKnox += digits[Math.floor(Math.random() * numBar.length)];
+    fortKnox += soSpec[Math.floor(Math.random() * specThis.length)];
+
+    while (saiyan > fortKnox.length) {
+      fortKnox += maxCombo[Math.floor(Math.random() * comboMax.length)];
+    }
+    return fortKnox;
+  }
+
+  if (checkUp && checkLow && !checkNums && checkSpec) {
+    
+
+    fortKnox += whatUp[Math.floor(Math.random() * upperCap.length)];
+    fortKnox += lowChar[Math.floor(Math.random() * downLow.length)];
+    // fortKnox += digits[Math.floor(Math.random() * numBar.length)];
+    fortKnox += soSpec[Math.floor(Math.random() * specThis.length)];
+
+    while (saiyan > fortKnox.length) {
+      fortKnox += maxCombo[Math.floor(Math.random() * comboMax.length)];
+    }
+    return fortKnox;
+  }
+
+  if (checkUp && checkLow && checkNums && !checkSpec) {
+    
+
+    fortKnox += whatUp[Math.floor(Math.random() * upperCap.length)];
+    fortKnox += lowChar[Math.floor(Math.random() * downLow.length)];
+    fortKnox += digits[Math.floor(Math.random() * numBar.length)];
+    // fortKnox += soSpec[Math.floor(Math.random() * specThis.length)];
+
+    while (saiyan > fortKnox.length) {
+      fortKnox += maxCombo[Math.floor(Math.random() * comboMax.length)];
+    }
+    return fortKnox;
+  }
+
+  if (!checkUp && !checkLow && !checkNums && !checkSpec) {
+    
+    alert('No password can be generated with the choices you made');
+    return;
+  }
+
+
 } ;
 
 // function naruto() {
