@@ -1,1 +1,3 @@
 # secure-password-generator
+
+This is a password generator that can take in characters that you as a user chooses to have as your password.  The password generated is a secure one that will automatically change to the lenght you specify.  You can choose to not use all the character types as suggested or you may use all of them - the choice is yours as this is your secure password generator.  So forget about having to come up with your own unique password use this password generator to create your unique secure password no hacker will guess!
