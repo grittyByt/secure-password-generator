@@ -215,130 +215,6 @@ const luffy = () => {
 
 } ;
 
-// function naruto() {
-//   const allCap = confirm('Do you want to have capitalized letters in your password?');
-//      allCap;
-
-// }
-
-// function ichigo() {
-//   let allLow = confirm('Do you want to have lowercase letters in your password?', 'Press OK');
-//   allLow;
-// }
-
-// function goku() {
-//   if(naruto) {
-//     ichigo;
-//     alert('making progress!')
-//   } else {
-//     alert('another progress!')
-//   }
-// }
-
-
-// function generateChoices(){
-//    // adding parseInt method around the prompt will prevent weirdness from happening if user enters a number with decimal (non integer)
-  
-//   //  lengthCheck;
-//   //  if(Luffy.value >= 8 && Luffy.value < 129 && Luffy.value !== null){
-//   //    let allCap = confirm('Do you want to have capitalized letters in your password?');
-//   //    allCap;
-//   //  } else if(lengthCheck === null){
-//   //    alert('Cannot be left blank!');
-//   //    return generatePassword();
-//   //  } else {
-//   //    alert('A number between 8 and 128 must be selected to continue.')
-//   //    console.log('is this working?');
-//   //  };
-   
-//    // after selecting OK the user will be prompted several more times with these if statements.
-//    if(allCap === true){
-//      let allLow = confirm('Do you want to have lowercase letters in your password?', 'Press OK');
-//      allLow;
-//      console.log('what next?');
-//    } else if(allCap === null){
-//      alert('Cannot be left blank!');
-//      return allCap;
-//    } else {
-//      alert('It"s highly suggested to have a CAPTILIZED letter to better secure the password.');
-//      return generatePassword();
-//    };
- 
-//    if(allLow){
-//      let specCheck = confirm('Do you want to have special characters in your password?', 'Press OK');
-//      specCheck;
-//    } else if(allLow === null){
-//      alert('Cannot be left blank!');
-//      return allLow;
-//    } else {
-//      alert('It"s highly suggested to have a lowercase letter to better secure the password.');
-//      return generatePassword();
-//    };
- 
-//    if(specCheck){
-//      let numCheck = confirm('Do you want to have numbers in your password?', 'Press OK');
-//      numCheck;
-//    } else if (numCheck === null){
-//      alert('Cannot be left blank?');
-//      return numCheck;
-//    } else {
-//      alert('It"s highly suggested to have a lowercase letter to better secure the password.');
-//      return generatePassword();
-//    }
-
-//   //  object containing the confirmation decison by the user
-//    let passChoices = {
-//     passLength: lengthCheck,
-//     passUp: allCap,
-//     passLow: allLow,
-//     passNum: numCheck,
-//     passSpec: specCheck
-//    }
-
-//    if(numCheck){
-//     return passChoices;
-//    } else if (numCheck === null){
-//     alert('Cannot be left blank?');
-//     return numCheck;
-//   } else {
-//     alert('It"s highly suggested to have a number to better secure the password.');
-//     return generatePassword();
-//   }
-
-// }
-
-// function generatePassword(){
-  
-//   // when the button is pressed the user is prompted with their first question
-// //  let userConfirmation = generateChoices();
-// //  let userConfirmed = '';
-// //  let pass = '';
-
-// //  if(userConfirmation.passUp){
-// //   userConfirmed += upCap.join('');
-// //  }
-
-// //  if(userConfirmation.passLow){
-// //   userConfirmed += lowLett.join('');
-// //  }
-
-// //  if(userConfirmation.passSpec){
-// //   userConfirmed += specChar.join('');
-// //  }
-
-// //  if(userConfirmation.passNum){
-// //   userConfirmed += numChar.join('');
-// //  }
-
-// //  for(howLong = 0; howLong < userConfirmation.passLength; howLong++){
-// //   let atRandom = Math.floor(Math.random() * userConfirmed.length);
-// //   pass += userConfirmed.charAt(atRandom);
-// //  }
-
-// //  return pass;
-
-// }
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -346,7 +222,8 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   checkLength();
-  // luffy();
+  
+  // password variable outputs the results of the luffy function to the user viewport
   var password = luffy();
   var passwordText = document.querySelector("#password");
 
