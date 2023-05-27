@@ -42,7 +42,7 @@ function checkLength() {
     return checkLength();
   } else {
     alert('Cannot be left blank');
-    return;
+    return checkLength();
   };
 };
 
